@@ -35,10 +35,17 @@ class App extends Component {
     //Ensure that the user input is a string of max length 100 characters
     //OR that the user input is a number greater than 50 but less than 1000
 
-    //Add to the state of list items
-    list_items.push(user_input)
+   //Add to the state of list items
+   if(user_input.length >=50 && user_input.length <=100)
+   {
+   list_items.push(user_input)
+   } else{
+     alert("The input was invalid");
+   };
 
-    this.setState({list_items})
+
+   this.setState({list_items})
+   this.setState({user_input: ''})
   }
 
   render() {
